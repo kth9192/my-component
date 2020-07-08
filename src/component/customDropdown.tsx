@@ -13,19 +13,26 @@ const DropDown = () => {
   };
 
   return (
-    <Fragment>
-      <TestBtn onClick={selectorReveal}></TestBtn>
+    <Cover>
+      <DropdownCover onClick={selectorReveal}></DropdownCover>
       <DropDownBody activated={activate}>
         <DropdownItem onClick={selectorReveal}>1</DropdownItem>
         <DropdownItem onClick={selectorReveal}>2</DropdownItem>
       </DropDownBody>
-    </Fragment>
+    </Cover>
   );
 };
 
-const TestBtn = styled.button`
+const Cover = styled.div`
+  display: flex;
+`;
+
+const DropdownCover = styled.div`
   width: 100px;
   height: 50px;
+  border: 2px solid #bcbcbe;
+  cursor: pointer;
+  border-radius: 5px;
 `;
 
 const DropDownBody = styled.div<{ activated: boolean }>`
@@ -38,9 +45,10 @@ const DropDownBody = styled.div<{ activated: boolean }>`
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   visibility: ${(props) => (props.activated ? 'visible' : 'hidden')};
-  transition: visibility 0.2s linear;
-  animation: ${(props) => (props.activated ? fadeIn : fadeOut)} 0.2s linear;
+  transition: visibility 0.1s linear;
+  animation: ${(props) => (props.activated ? fadeIn : fadeOut)} 0.1s linear;
   margin: 0;
+  background: white;
 `;
 
 const DropdownItem = styled.div`
