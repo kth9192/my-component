@@ -4,7 +4,7 @@ import styled, { keyframes } from "styled-components";
 interface DropdownProps {
   dropdownValues: Array<Record<string, string | number>>;
   title: string;
-  handleClickItem: () => void;
+  handleClickItem: (event: MouseEvent) => void;
 }
 
 const DropDown: FC<DropdownProps> = props => {
@@ -12,7 +12,7 @@ const DropDown: FC<DropdownProps> = props => {
   const [title, setTitle] = useState<string | number>(props.title);
 
   const handleClickItem = (event: MouseEvent, title: string | number) => {
-    props.handleClickItem ? props.handleClickItem() : null;
+    props.handleClickItem ? props.handleClickItem(event) : null;
     setActivated(!activate);
     setTitle(title);
   };
@@ -115,4 +115,3 @@ const fadeOut = keyframes`
 `;
 
 export default DropDown;
-
