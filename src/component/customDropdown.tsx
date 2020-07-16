@@ -1,8 +1,6 @@
 import React, { useState, MouseEvent, Fragment } from 'react';
 import styled, { keyframes } from 'styled-components';
 
-type Props = {};
-
 type State = {};
 
 const DropDown = () => {

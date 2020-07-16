@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
-import CustomDropdown from './component/customDropdown';
+import CustomDropdown from 'component/customDropdown';
+import CustomFormik from 'component/customFormik';
 import styled from 'styled-components';
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <div className='App'>
       <Cover>
         <CustomDropdown />
+        <CustomFormik />
       </Cover>
     </div>
   );
